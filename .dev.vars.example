@@ -1,0 +1,28 @@
+# 本地开发：复制为 .dev.vars 后填写（.dev.vars 已被 .gitignore 忽略，不要提交）。
+# 这份文件同时是「Deploy to Cloudflare」按钮读取的变量清单，所以只保留键名、值一律留空。
+
+# 会话签名、验证码、IP 摘要都用它，至少 16 字符。
+# 生成：node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
+SESSION_SECRET=
+
+# 本地填 http://127.0.0.1:8787；线上填实际地址 https://你的域名（结尾不带斜杠）。
+# 留空时按请求域名推断，但 sitemap 与 OAuth 回跳会用到它，线上建议填。
+SITE_URL=
+
+# GitHub OAuth App：https://github.com/settings/developers
+# 本地回调 http://127.0.0.1:8787/api/auth/github/callback
+# 线上回调 https://你的域名/api/auth/github/callback
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+# 逗号分隔的管理员 GitHub 用户名；不填则没有人能登录后台。
+ADMIN_GITHUB_LOGINS=
+
+# 可选：AI 自动简介。不配任何 Key 也能用免费的 Pollinations。（模型与接口地址在后台「设置 → AI 简介」里配置）
+# AI_BASE_URL=         # 一般不用设，后台设置的接口地址优先
+# AI_API_KEY=          # 通用兜底
+# DEEPSEEK_API_KEY=
+# DASHSCOPE_API_KEY=   # 通义千问（阿里云百炼），也可用 QWEN_API_KEY
+# ARK_API_KEY=         # 火山方舟（豆包），也可用 VOLCENGINE_API_KEY
+# OPENAI_API_KEY=
+# GEMINI_API_KEY=

@@ -1,0 +1,29 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "inav-test",
+	"main": "worker/index.ts",
+	"compatibility_date": "2026-09-01",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": [
+			"/api/*",
+			"/sitemap.xml",
+			"/go/*",
+			"/admin",
+			"/admin/*"
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "inav",
+			"migrations_dir": "migrations","database_id": "944b8510-25c5-4648-bfbe-6fcaa7e4b3de"
+		}
+	],
+	// 不做定时任务：链接检测只在新增/修改站点和后台手动点「检测链接」时触发
+	"observability": {
+		"enabled": true
+	}
+}

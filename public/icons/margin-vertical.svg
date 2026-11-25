@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- 单个图标，由 scripts/build-icon-sprite.mjs 生成，请勿手改 -->
+  <defs><symbol id="icon-margin-vertical" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1" /> <path d="M3 21h18" /> <path d="M3 3h18" /></symbol></defs>
+</svg>
